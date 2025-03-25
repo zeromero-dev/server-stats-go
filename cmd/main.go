@@ -15,7 +15,7 @@ import (
 
 	"github.com/joho/godotenv"
 
-	routes "github.com/zeromero-dev/server-stats-go/internal" // Import your routes package
+	routes "github.com/zeromero-dev/server-stats-go/internal"
 )
 
 func main() {
@@ -79,11 +79,11 @@ func main() {
 
 		switch choice {
 		case 1:
-			routes.ViewSystem(client) // Call the function from internal/routes.go
+			routes.ViewSystem(client)
 		case 2:
-			routes.ViewLoad(client) // Call the function from internal/routes.go
+			routes.ViewLoad(client)
 		case 3:
-			routes.ShutOffSystem(client) // Call the function from internal/routes.go
+			routes.ShutOffSystem(client)
 			return
 		default:
 			fmt.Println("Invalid option. Try again.")
@@ -91,12 +91,11 @@ func main() {
 	}
 }
 
-// readPassword reads a password securely.
 func readPassword() (string, error) {
 	bytePassword, err := term.ReadPassword(int(syscall.Stdin))
 	if err != nil {
 		return "", err
 	}
-	fmt.Println() // Move to next line after password input.
+	fmt.Println() //next line after password input.
 	return strings.TrimSpace(string(bytePassword)), nil
 }

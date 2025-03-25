@@ -6,7 +6,6 @@ import (
 	"golang.org/x/crypto/ssh"
 )
 
-// ViewSystem executes a command to retrieve system information.
 func ViewSystem(client *ssh.Client) {
 	session, err := client.NewSession()
 	if err != nil {
@@ -24,7 +23,6 @@ func ViewSystem(client *ssh.Client) {
 	fmt.Println(string(output))
 }
 
-// ViewLoad executes a command to show system load.
 func ViewLoad(client *ssh.Client) {
 	session, err := client.NewSession()
 	if err != nil {
@@ -42,7 +40,6 @@ func ViewLoad(client *ssh.Client) {
 	fmt.Println(string(output))
 }
 
-// ShutOffSystem sends a shutdown command to the remote system.
 func ShutOffSystem(client *ssh.Client) {
 	session, err := client.NewSession()
 	if err != nil {
